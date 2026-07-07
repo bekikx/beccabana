@@ -4,8 +4,50 @@ const state = {
   book: "all", // "all" | 1 | 2 | 3 | "freestyle"
   sortBy: "date", // "lesson" | "date"
   sortDir: "desc", // "asc" | "desc"
-  page: 1
+  page: 1,
+  lang: localStorage.getItem("lang") === "ja" ? "ja" : "en"
 };
+
+function t(key) {
+  return UI_STRINGS[state.lang][key];
+}
+
+function setText(id, text) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = text;
+}
+
+function applyStaticText() {
+  document.documentElement.lang = state.lang === "ja" ? "ja" : "en";
+  setText("nav-about", t("navAbout"));
+  setText("nav-gallery", t("navGallery"));
+  setText("nav-contact", t("navContact"));
+  setText("hero-kicker", t("heroKicker"));
+  setText("hero-sub", t("heroSub"));
+  setText("about-title", t("aboutTitle"));
+  setText("about-p1", t("aboutP1"));
+  setText("about-p2", t("aboutP2"));
+  setText("about-p3", t("aboutP3"));
+  setText("gallery-title", t("galleryTitle"));
+  setText("contact-title", t("contactTitle"));
+  setText("contact-text", t("contactText"));
+
+  document.getElementById("lang-en").classList.toggle("active", state.lang === "en");
+  document.getElementById("lang-ja").classList.toggle("active", state.lang === "ja");
+}
+
+function setLang(lang) {
+  if (lang === state.lang) return;
+  state.lang = lang;
+  localStorage.setItem("lang", lang);
+  applyStaticText();
+  renderAll();
+}
+
+function initLangToggle() {
+  document.getElementById("lang-en").addEventListener("click", () => setLang("en"));
+  document.getElementById("lang-ja").addEventListener("click", () => setLang("ja"));
+}
 
 function booksPresent() {
   // Freestyle first, then Book 3, Book 2, Book 1.
@@ -54,10 +96,11 @@ function filteredPieces() {
 function renderBookTabs() {
   const el = document.getElementById("book-tabs");
   const books = booksPresent();
-  const tabs = ['<button class="tab' + (state.book === "all" ? " active" : "") + '" data-book="all">All Arrangements</button>'];
+  const titles = state.lang === "ja" ? BOOK_TITLES_JA : BOOK_TITLES;
+  const tabs = ['<button class="tab' + (state.book === "all" ? " active" : "") + '" data-book="all">' + t("allArrangements") + '</button>'];
   books.forEach(b => {
     tabs.push(
-      `<button class="tab${state.book === b ? " active" : ""}" data-book="${b}">${BOOK_TITLES[b] || "Book " + b}</button>`
+      `<button class="tab${state.book === b ? " active" : ""}" data-book="${b}">${titles[b] || "Book " + b}</button>`
     );
   });
   el.innerHTML = tabs.join("");
@@ -84,15 +127,15 @@ function renderSortControls() {
   }
 
   const lessonOptions = state.book === "freestyle" ? "" : `
-      <option value="lesson-asc">Lesson: Ascending</option>
-      <option value="lesson-desc">Lesson: Descending</option>`;
+      <option value="lesson-asc">${t("sortLessonAsc")}</option>
+      <option value="lesson-desc">${t("sortLessonDesc")}</option>`;
 
   const current = `${state.sortBy}-${state.sortDir}`;
   el.innerHTML = `
-    <label for="sort-select">Sort by</label>
+    <label for="sort-select">${t("sortByLabel")}</label>
     <select id="sort-select" autocomplete="off">
-      <option value="date-desc">Date: Newest First</option>
-      <option value="date-asc">Date: Oldest First</option>${lessonOptions}
+      <option value="date-desc">${t("sortDateDesc")}</option>
+      <option value="date-asc">${t("sortDateAsc")}</option>${lessonOptions}
     </select>
   `;
   el.querySelector("#sort-select").value = current;
@@ -106,11 +149,27 @@ function renderSortControls() {
 }
 
 function cardLabel(piece) {
-  if (piece.book === "freestyle") return piece.title || "Freestyle Arrangement";
+  if (piece.book === "freestyle") return piece.title || t("freestyleArrangement");
+
+  if (state.lang === "ja") {
+    const name = lessonNameJa(piece.book, piece.lesson);
+    const bookLabel = `第${piece.book}課程`;
+    if (piece.lesson && name) return `${bookLabel}・課題${piece.lesson}：${name}`;
+    if (piece.lesson) return `${bookLabel}・課題${piece.lesson}`;
+    return `${bookLabel}・${t("lessonTBD")}`;
+  }
+
   const name = lessonName(piece.book, piece.lesson);
   if (piece.lesson && name) return `Book ${piece.book} · Lesson ${piece.lesson}: ${name}`;
   if (piece.lesson) return `Book ${piece.book} · Lesson ${piece.lesson}`;
-  return `Book ${piece.book} · Lesson TBD`;
+  return `Book ${piece.book} · ${t("lessonTBD")}`;
+}
+
+function pieceDescription(piece) {
+  if (state.lang === "ja") {
+    return DESCRIPTIONS_JA[piece.id] || piece.description;
+  }
+  return piece.description;
 }
 
 function buildCard(piece) {
@@ -138,7 +197,7 @@ function buildCard(piece) {
     img.src = src;
     img.alt = piece.title || cardLabel(piece);
     img.loading = "lazy";
-    img.addEventListener("error", () => handleImageError(img, "Photo unavailable", "gallery"));
+    img.addEventListener("error", () => handleImageError(img, t("photoUnavailable"), "gallery"));
     slide.appendChild(img);
     track.appendChild(slide);
   });
@@ -216,12 +275,13 @@ function buildCard(piece) {
 
   card.appendChild(carousel);
 
+  const desc = pieceDescription(piece);
   const body = document.createElement("div");
   body.className = "card-body";
   body.innerHTML = `
     <p class="card-meta">${piece.date}</p>
     <h3 class="card-title">${piece.title || cardLabel(piece)}</h3>
-    ${piece.description ? `<p class="card-desc">${piece.description}</p>` : ""}
+    ${desc ? `<p class="card-desc">${desc}</p>` : ""}
   `;
   card.appendChild(body);
 
@@ -238,7 +298,7 @@ function renderGallery() {
   pageItems.forEach(piece => grid.appendChild(buildCard(piece)));
 
   if (pageItems.length === 0) {
-    grid.innerHTML = `<p class="empty-state">No pieces here yet.</p>`;
+    grid.innerHTML = `<p class="empty-state">${t("emptyState")}</p>`;
   }
 
   renderPagination(all.length);
@@ -253,11 +313,11 @@ function renderPagination(total) {
   }
 
   const buttons = [];
-  buttons.push(`<button class="page-btn" id="page-prev" ${state.page === 1 ? "disabled" : ""}>&#8249; Prev</button>`);
+  buttons.push(`<button class="page-btn" id="page-prev" ${state.page === 1 ? "disabled" : ""}>&#8249; ${t("prev")}</button>`);
   for (let i = 1; i <= pageCount; i++) {
     buttons.push(`<button class="page-btn${i === state.page ? " active" : ""}" data-page="${i}">${i}</button>`);
   }
-  buttons.push(`<button class="page-btn" id="page-next" ${state.page === pageCount ? "disabled" : ""}>Next &#8250;</button>`);
+  buttons.push(`<button class="page-btn" id="page-next" ${state.page === pageCount ? "disabled" : ""}>${t("next")} &#8250;</button>`);
   el.innerHTML = buttons.join("");
 
   el.querySelectorAll("[data-page]").forEach(btn => {
@@ -347,7 +407,7 @@ function handleImageError(img, message, variant) {
 function initProfilePhoto() {
   const img = document.getElementById("profile-photo");
   img.addEventListener("error", () => {
-    handleImageError(img, "Add your photo — images/profile/profile.jpg", "profile");
+    handleImageError(img, t("addYourPhoto"), "profile");
   }, { once: true });
 }
 
@@ -361,4 +421,6 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 initProfilePhoto();
 initHeroBackground();
+initLangToggle();
+applyStaticText();
 renderAll();
