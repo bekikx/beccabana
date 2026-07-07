@@ -252,7 +252,7 @@ const pieces = [
     lesson: 20, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-11-09-1.jpg"],
     title: "",
-    description: "chrysanthemum, peony, small flowering branch"
+    description: "chrysanthemum, peony, small flowering material"
   },
   {
     id: "2024-11-09b",
@@ -270,7 +270,7 @@ const pieces = [
     lesson: null, // freestyle piece — not part of the Sogetsu curriculum
     images: ["images/book1/2024-11-16-1.jpg"],
     title: "",
-    description: "manipulated palm leaf, lily"
+    description: "palm leaf, lily"
   },
   {
     id: "2024-11-16b",
@@ -279,7 +279,7 @@ const pieces = [
     lesson: 1, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-11-16-2.jpg"],
     title: "",
-    description: "lily, camellia branch"
+    description: "lily, camellia"
   },
   {
     id: "2025-02-22",
@@ -513,7 +513,7 @@ const pieces = [
     lesson: 6, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-03-14-1.jpg"],
     title: "",
-    description: "flowering quince branch, scabiosa"
+    description: "flowering quince, scabiosa"
   },
   {
     id: "2026-03-14b",

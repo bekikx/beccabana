@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>becca花 — Ikebana Portfolio</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f6f2ea'/><text x='50' y='71' font-size='58' text-anchor='middle' font-family='serif' fill='%232b2620'>%E8%8A%B1</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,9 +14,13 @@
   <div class="wrap header-inner">
     <a class="brand" href="#top">becca花</a>
     <nav>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" id="nav-about">About</a>
+      <a href="#gallery" id="nav-gallery">Gallery</a>
+      <a href="#contact" id="nav-contact">Contact</a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" id="lang-en" data-lang="en">EN</button>
+        <button type="button" id="lang-ja" data-lang="ja">日本語</button>
+      </div>
     </nav>
   </div>
 </header>
@@ -25,27 +30,27 @@
   <div class="hero-scrim"></div>
   <div class="wrap hero-content">
     <h1>beccabana</h1>
-    <p class="hero-kicker">Ikebana Portfolio</p>
-    <p class="hero-sub">Sogetsu-trained ikebana designer based in Philadelphia</p>
+    <p class="hero-kicker" id="hero-kicker">Ikebana Portfolio</p>
+    <p class="hero-sub" id="hero-sub">Sogetsu-trained ikebana designer based in Philadelphia</p>
   </div>
 </section>
 
 <section class="about" id="about">
   <div class="wrap about-inner">
-    <h2 class="section-title">About</h2>
+    <h2 class="section-title" id="about-title">About</h2>
     <div class="about-grid">
       <div class="profile-photo-wrap">
         <img class="profile-photo" id="profile-photo" src="images/profile/profile.jpg" alt="Portrait">
       </div>
       <div class="about-text">
-        <p>
+        <p id="about-p1">
           Becca is an Ikebana designer that has been studying the Sogetsu
           style since 2024. She currently holds a Third Certificate (Nikyu)
           under her sensei, Rachel Johnson, as part of the Soho Study Group.
           She began her practice in San Francisco and is currently based in
           Philadelphia.
         </p>
-        <p>
+        <p id="about-p2">
           For Becca, Ikebana is more than an art form: it is a practice of
           intentionality. Each arrangement's beauty is found in the character
           of the material itself rather than in perfection — a way of seeing
@@ -53,7 +58,7 @@
           and accept impermanence. Lessons that, in her experience, extend
           well beyond the studio.
         </p>
-        <p>
+        <p id="about-p3">
           She believes that Ikebana is truly for anytime, anywhere,
           anything, and anyone.
         </p>
@@ -64,7 +69,7 @@
 
 <section class="gallery" id="gallery">
   <div class="wrap">
-    <h2 class="section-title">Gallery</h2>
+    <h2 class="section-title" id="gallery-title">Gallery</h2>
 
     <div class="book-tabs" id="book-tabs"></div>
     <div class="sort-controls" id="sort-controls"></div>
@@ -77,8 +82,8 @@
 
 <section class="contact" id="contact">
   <div class="wrap contact-inner">
-    <h2 class="section-title">Contact</h2>
-    <p>Interested in a commission, a class, or just want to say hello?</p>
+    <h2 class="section-title" id="contact-title">Contact</h2>
+    <p id="contact-text">Interested in a commission, a class, or just want to say hello?</p>
     <a class="email-link" href="mailto:beccakxiao@gmail.com">beccakxiao@gmail.com</a>
   </div>
 </section>
@@ -98,6 +103,7 @@
 </div>
 
 <script src="js/data.js"></script>
+<script src="js/i18n.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
