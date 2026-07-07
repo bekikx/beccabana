@@ -514,6 +514,27 @@ html[lang="ja"] .hero-sub {
   color: var(--ink-soft);
 }
 
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+
+.icon-link svg { width: 18px; height: 18px; }
+
+.icon-link:hover { color: var(--accent); }
+
 /* Lightbox */
 .lightbox {
   display: none;
