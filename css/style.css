@@ -186,36 +186,33 @@ nav a:hover { color: var(--accent); }
   color: var(--paper);
 }
 
-/* Lesson chips */
-.lesson-filter {
+/* Sort controls */
+.sort-controls {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 46px;
   padding-bottom: 30px;
   border-bottom: 1px solid var(--line);
 }
 
-.chip {
-  background: none;
-  border: 1px solid var(--line);
-  border-radius: 100px;
-  color: var(--ink-soft);
-  padding: 6px 16px;
+.sort-controls label {
   font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-transform: lowercase;
+}
+
+.sort-controls select {
+  font-family: 'Zen Kaku Gothic New', 'Cormorant Garamond', serif;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  padding: 6px 14px;
+  font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
-.chip:hover { border-color: var(--moss); color: var(--ink); }
-
-.chip.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-
-.chip-muted { opacity: 0.7; font-style: italic; }
+.sort-controls select:hover { border-color: var(--moss); }
 
 /* Uniform gallery grid — same box size for every card regardless of the
    source photo's orientation (portrait/landscape/square) */
@@ -361,8 +358,10 @@ nav a:hover { color: var(--accent); }
 
 .card-desc {
   font-size: 0.92rem;
+  font-style: italic;
   color: var(--ink-soft);
   margin: 0;
+  white-space: pre-line;
 }
 
 /* Placeholder shown when an image file is missing (img elements can't

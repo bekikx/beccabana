@@ -96,172 +96,172 @@ const pieces = [
     id: "2024-01-27",
     date: "2024-01-27",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it — this is your very first arrangement
+    lesson: 1, // TODO: fill in 1-20 once you know it — this is your very first arrangement
     images: ["images/book1/2024-01-27-1.jpg"],
     title: "",
-    description: "Spider chrysanthemums and pussy willow branches"
+    description: "chrysanthemum, pussy willow"
   },
   {
     id: "2024-02-03",
     date: "2024-02-03",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 2, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-02-03-1.jpg"],
     title: "",
-    description: "Protea and flowering quince branches"
+    description: "protea, flowering quince"
   },
   {
     id: "2024-02-10",
     date: "2024-02-10",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 4, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-02-10-1.jpg"],
     title: "",
-    description: "Ranunculus and a flowering branch"
+    description: "ranunculus, flowering almond"
   },
   {
     id: "2024-02-24",
     date: "2024-02-24",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 7, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-02-24-1.jpg"],
     title: "",
-    description: "Garden roses and a flowering quince branch"
+    description: "garden rose, flowering quince"
   },
   {
     id: "2024-03-02",
     date: "2024-03-02",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 9, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-03-02-1.jpg"],
     title: "",
-    description: "Anemones, veronica and a leafy vine branch"
+    description: "anemone, veronica, branch"
   },
   {
     id: "2024-07-13",
     date: "2024-07-13",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 3, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-07-13-1.jpg"],
     title: "",
-    description: "Pompom dahlias and bells of Ireland"
+    description: "dahlia, bells of ireland"
   },
   {
     id: "2024-07-20",
     date: "2024-07-20",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 5, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-07-20-1.jpg"],
     title: "",
-    description: "Pompom dahlias and a leafy branch"
+    description: "dahlia, myrtle"
   },
   {
     id: "2024-07-27",
     date: "2024-07-27",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 6, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-07-27-1.jpg"],
     title: "",
-    description: "Pompom dahlias and a leafy branch"
+    description: "dahlia, myrtle"
   },
   {
     id: "2024-08-03",
     date: "2024-08-03",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 8, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-08-03-1.jpg"],
     title: "",
-    description: "Ranunculus, nerine lilies and bunny tail grass"
+    description: "ranunculus, nerine lily, exploding grass"
   },
   {
     id: "2024-09-07a",
     date: "2024-09-07",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 11, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-09-07-1.jpg"],
     title: "",
-    description: "Ranunculus and curly willow branches"
+    description: "ranunculus, curly willow"
   },
   {
     id: "2024-09-07b",
     date: "2024-09-07",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 12, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-09-07-2.jpg"],
     title: "",
-    description: "Gerbera daisies and branches"
+    description: "gerbera daisy, oak branch"
   },
   {
     id: "2024-09-21",
     date: "2024-09-21",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 13, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-09-21-1.jpg"],
     title: "",
-    description: "Pompom dahlias and a leafy vine branch"
+    description: "dahlia, curly willow"
   },
   {
     id: "2024-09-28",
     date: "2024-09-28",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 14, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-09-28-1.jpg"],
     title: "",
-    description: "Celosia and curly willow branches"
+    description: "celosia, curly willow"
   },
   {
     id: "2024-10-12a",
     date: "2024-10-12",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 15, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-10-12-1.jpg"],
     title: "",
-    description: "Hydrangea and anthurium"
+    description: "hydrangea, flax, anthurium"
   },
   {
     id: "2024-10-12b",
     date: "2024-10-12",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 16, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-10-12-2.jpg"],
     title: "",
-    description: "Clematis and wildflowers"
+    description: "clematis, fennel flower"
   },
   {
     id: "2024-10-26",
     date: "2024-10-26",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 18, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-10-26-1.jpg"],
     title: "",
-    description: "Button chrysanthemums and Japanese maple branches"
+    description: "scabiosa, japanese maple"
   },
   {
     id: "2024-11-02",
     date: "2024-11-02",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 19, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-11-02-1.jpg"],
     title: "",
-    description: "Garden roses and maple branches"
+    description: "garden rose, maple"
   },
   {
     id: "2024-11-09a",
     date: "2024-11-09",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 20, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-11-09-1.jpg"],
     title: "",
-    description: "Spider mums, peonies and trailing amaranth"
+    description: "chrysanthemum, peony, small flowering branch"
   },
   {
     id: "2024-11-09b",
     date: "2024-11-09",
     book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 20, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-11-09-2.jpg"],
     title: "",
-    description: "Spider mums and trailing amaranth"
+    description: "chrysanthemum, trailing amaranth"
   },
   {
     id: "2024-11-16a",
@@ -270,97 +270,97 @@ const pieces = [
     lesson: null, // freestyle piece — not part of the Sogetsu curriculum
     images: ["images/book1/2024-11-16-1.jpg"],
     title: "",
-    description: "Bent-grass framework and a lily"
+    description: "manipulated palm leaf, lily"
   },
   {
     id: "2024-11-16b",
     date: "2024-11-16",
-    book: 1,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    book: 2,
+    lesson: 1, // TODO: fill in 1-20 once you know it
     images: ["images/book1/2024-11-16-2.jpg"],
     title: "",
-    description: "Glossy branch and gardenia blooms"
+    description: "lily, camellia branch"
   },
   {
     id: "2025-02-22",
     date: "2025-02-22",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 2, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-02-22-1.jpg"],
     title: "",
-    description: "Pompom chrysanthemums and a flowering branch"
+    description: "chrysanthemum, quince"
   },
   {
     id: "2025-03-01",
     date: "2025-03-01",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 3, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-03-01-1.jpg"],
     title: "",
-    description: "Garden roses and mimosa branches"
+    description: "garden rose, mimosa branch"
   },
   {
     id: "2025-03-15a",
     date: "2025-03-15",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 5, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-03-15-1.jpg"],
     title: "",
-    description: "Cherry blossom branch and ranunculus"
+    description: "ranunculus, cherry blossom branch"
   },
   {
     id: "2025-03-15b",
     date: "2025-03-15",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 4, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-03-15-2.jpg"],
     title: "",
-    description: "Cherry blossom branch and roses"
+    description: "rose, cherry blossom branch"
   },
   {
     id: "2025-03-22",
     date: "2025-03-22",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 8, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-03-22-1.jpg"],
     title: "",
-    description: "Calla lily and a small flowering vine"
+    description: "calla lily, spirea"
   },
   {
     id: "2025-04-12",
     date: "2025-04-12",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 6, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-04-12-1.jpg"],
     title: "",
-    description: "Cosmos and a flowering vine"
+    description: "butterfly ranunculus, scotch broom"
   },
   {
     id: "2025-04-19",
     date: "2025-04-19",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 7, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-04-19-1.jpg"],
     title: "",
-    description: "Ninebark branches and flower clusters"
+    description: "plum branch, statice"
   },
   {
     id: "2025-04-26",
     date: "2025-04-26",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 9, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-04-26-1.jpg"],
     title: "",
-    description: "Freesia and a leafy vine"
+    description: "freesia, italian ruscus"
   },
   {
     id: "2025-05-03",
     date: "2025-05-03",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 10, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-05-03-1.jpg"],
     title: "",
-    description: "Anemones, scabiosa, jointed stems and asparagus fern"
+    description: "anemone, scabiosa, asparagus fern, horsetail"
   },
   {
     id: "2025-05-06",
@@ -369,88 +369,70 @@ const pieces = [
     lesson: null, // freestyle piece — not part of the Sogetsu curriculum
     images: ["images/book2/2025-05-06-1.jpg"],
     title: "",
-    description: "Flax and craspedia flowers"
+    description: "flax, painted billy balls"
   },
   {
     id: "2025-05-10",
     date: "2025-05-10",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 11, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-05-10-1.jpg"],
     title: "",
-    description: "Tulips, flower clusters and Queen Anne's lace"
+    description: "tulip, goldenrod, queen anne's lace"
   },
   {
     id: "2025-06-21",
     date: "2025-06-21",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 12, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-06-21-1.jpg"],
     title: "",
-    description: "Garden roses and spirea"
+    description: "garden rose, hypericum berry, spirea"
   },
   {
     id: "2025-06-28",
     date: "2025-06-28",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 13, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-06-28-1.jpg", "images/book2/2025-06-28-2.jpg", "images/book2/2025-06-28-3.jpg"],
     title: "",
-    description: "Anemones and sweet chestnut branches with spiky burs"
+    description: "anemone, sweet chestnut branch, green foliage"
   },
   {
     id: "2025-07-12",
     date: "2025-07-12",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 14, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-07-12-2.jpg", "images/book2/2025-07-12-1.jpg"],
     title: "",
-    description: "Blueberry branches, spirea and scabiosa pods"
+    description: "scabiosa, blueberry branch, green foliage"
   },
   {
     id: "2025-07-19",
     date: "2025-07-19",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 15, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-07-19-1.jpg"],
     title: "",
-    description: "Roses and seeded eucalyptus"
+    description: "rose, seeded eucalyptus"
   },
   {
     id: "2025-11-08",
     date: "2025-11-08",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 17, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-11-08-1.jpg"],
     title: "",
-    description: "Dahlias, calla lilies, craspedia and leafy branches"
+    description: "dahlia, calla lily, italian ruscus, milkweed"
   },
   {
-    id: "2025-11-15a",
+    id: "2025-11-15",
     date: "2025-11-15",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
-    images: ["images/book2/2025-11-15-1.jpg"],
+    lesson: 16,
+    images: ["images/book2/2025-11-15-1.jpg", "images/book2/2025-11-15-2.jpg", "images/book2/2025-11-15-3.jpg", "images/book2/2025-11-15-4.jpg", "images/book2/2025-11-15-5.jpg"],
     title: "",
-    description: "Fruit and vegetable centerpiece on ti leaves"
-  },
-  {
-    id: "2025-11-15b",
-    date: "2025-11-15",
-    book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
-    images: ["images/book2/2025-11-15-2.jpg"],
-    title: "",
-    description: "Single hydrangea bloom wrapped in a ti leaf"
-  },
-  {
-    id: "2025-11-15c",
-    date: "2025-11-15",
-    book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
-    images: ["images/book2/2025-11-15-3.jpg", "images/book2/2025-11-15-4.jpg", "images/book2/2025-11-15-5.jpg"],
-    title: "",
-    description: "Calla lilies, celosia and asparagus fern"
+    description: "morimono: squash, mushroom, tangerine, persimmon, asparagus fern, ti leaf\nfloating: hydrangea, ti leaf\nspreading: calla lily, amaranth, ti leaf, asparagus fern"
   },
   {
     id: "2025-11-16",
@@ -459,204 +441,213 @@ const pieces = [
     lesson: null, // freestyle piece — not part of the Sogetsu curriculum
     images: ["images/book2/2025-11-16-1.jpg"],
     title: "",
-    description: "Pompom chrysanthemums, curly willow branches and seeded eucalyptus"
+    description: "chrysanthemum, curly willow, seeded eucalyptus"
   },
   {
-    id: "2025-12-06",
+    id: "2025-12-06a",
     date: "2025-12-06",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
-    images: ["images/book2/2025-12-06-2.jpg", "images/book2/2025-12-06-1.jpg"],
+    lesson: 18,
+    images: ["images/book2/2025-12-06-2.jpg"],
     title: "",
-    description: "Roses, chrysanthemums, nandina berries and cedar branches"
+    description: "rose, chrysanthemum, nandina berry, cedar branch"
+  },
+  {
+    id: "2025-12-06b",
+    date: "2025-12-06",
+    book: 2,
+    lesson: 19,
+    images: ["images/book2/2025-12-06-1.jpg"],
+    title: "",
+    description: "rose, chrysanthemum, nandina berry, cedar branch"
   },
   {
     id: "2025-12-13",
     date: "2025-12-13",
     book: 2,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 20, // TODO: fill in 1-20 once you know it
     images: ["images/book2/2025-12-13-1.jpg"],
     title: "",
-    description: "Calla lilies and asparagus fern"
+    description: "calla lily, amaranth, asparagus fern"
   },
   {
     id: "2026-02-15",
     date: "2026-02-15",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 1, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-02-15-1.jpg"],
     title: "",
-    description: "Calla lilies and scabiosa"
+    description: "calla lily, scabiosa fama"
   },
   {
     id: "2026-02-28a",
     date: "2026-02-28",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 2, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-02-28-1.jpg"],
     title: "",
-    description: "Single tulip and wax-flower spray"
+    description: "tulip, wax-flower spray"
   },
   {
     id: "2026-02-28b",
     date: "2026-02-28",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 3, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-02-28-2.jpg"],
     title: "",
-    description: "Tulips and garden roses"
+    description: "tulip, garden rose, wax-flower spray"
   },
   {
     id: "2026-03-07",
     date: "2026-03-07",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 4, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-03-07-1.jpg"],
     title: "",
-    description: "Spirea branches, a tulip and hellebores"
+    description: "spirea, tulip, million star baby's breath, hellebore"
   },
   {
     id: "2026-03-14a",
     date: "2026-03-14",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 6, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-03-14-1.jpg"],
     title: "",
-    description: "Flowering quince branches and pom flowers"
+    description: "flowering quince branch, scabiosa"
   },
   {
     id: "2026-03-14b",
     date: "2026-03-14",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 5, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-03-14-2.jpg"],
     title: "",
-    description: "Tall allium seed heads"
+    description: "allium"
   },
   {
     id: "2026-04-18",
     date: "2026-04-18",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 8, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-04-18-1.jpg"],
     title: "",
-    description: "Hydrangea, roses and scabiosa"
+    description: "hydrangea, rose, scabiosa"
   },
   {
     id: "2026-04-25a",
     date: "2026-04-25",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 9, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-04-25-1.jpg"],
     title: "",
-    description: "Calla lilies and iris"
+    description: "calla lily, billy balls, iris"
   },
   {
     id: "2026-04-25b",
     date: "2026-04-25",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 7, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-04-25-2.jpg"],
     title: "",
-    description: "Sunflowers and curly willow branches"
+    description: "sunflower, flax, curly willow"
   },
   {
     id: "2026-05-02a",
     date: "2026-05-02",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 11, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-05-02-1.jpg"],
     title: "",
-    description: "Looping grass and clematis"
+    description: "bear grass, lily grass, clematis"
   },
   {
     id: "2026-05-02b",
     date: "2026-05-02",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 10, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-05-02-2.jpg"],
     title: "",
-    description: "Banksia flower and eucalyptus"
+    description: "banksia flower, eucalyptus"
   },
   {
     id: "2026-05-06",
     date: "2026-05-06",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 12, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-05-06-1.jpg"],
     title: "",
-    description: "Hydrangea and pompom chrysanthemums"
+    description: "hydrangea, chrysanthemum"
   },
   {
     id: "2026-05-09",
     date: "2026-05-09",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 13, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-05-09-1.jpg"],
     title: "",
-    description: "Hydrangea and curly willow branches"
+    description: "hydrangea, curly willow"
   },
   {
     id: "2026-05-30a",
     date: "2026-05-30",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 14, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-05-30-1.jpg"],
     title: "",
-    description: "Pitcher plants and curled ti leaves"
+    description: "pitcher plant, tropical leaf, ti leaf"
   },
   {
     id: "2026-05-30b",
     date: "2026-05-30",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 16, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-05-30-2.jpg", "images/book3/2026-05-30-3.jpg", "images/book3/2026-05-30-4.jpg", "images/book3/2026-05-30-5.jpg"],
     title: "",
-    description: "Cosmos and curly vine"
+    description: "cosmos, curly willow"
   },
   {
     id: "2026-06-06a",
     date: "2026-06-06",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 17, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-06-06-1.jpg"],
     title: "",
-    description: "Smoke bush plumes and looping leaf ribbons"
+    description: "smoke bush, flax"
   },
   {
     id: "2026-06-06b",
     date: "2026-06-06",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 15, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-06-06-2.jpg"],
     title: "",
-    description: "Red twig dogwood and smoke bush plumes"
+    description: "red twig dogwood, chrysanthemum, smoke bush"
   },
   {
     id: "2026-06-20a",
     date: "2026-06-20",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 18, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-06-20-1.jpg"],
     title: "",
-    description: "Palm frond and small allium flowers"
+    description: "palm frond, small allium flower"
   },
   {
     id: "2026-06-20b",
     date: "2026-06-20",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 19, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-06-20-5.jpg", "images/book3/2026-06-20-2.jpg", "images/book3/2026-06-20-3.jpg", "images/book3/2026-06-20-4.jpg"],
     title: "",
-    description: "Roses, tulips and trailing jasmine vine"
+    description: "rose, tulip, trailing jasmine vine"
   },
   {
     id: "2026-06-27",
     date: "2026-06-27",
     book: 3,
-    lesson: null, // TODO: fill in 1-20 once you know it
+    lesson: 20, // TODO: fill in 1-20 once you know it
     images: ["images/book3/2026-06-27-5.jpg", "images/book3/2026-06-27-2.jpg", "images/book3/2026-06-27-3.jpg", "images/book3/2026-06-27-4.jpg", "images/book3/2026-06-27-1.jpg"],
     title: "",
-    description: "Dinnerplate dahlias and curly garlic scapes"
+    description: "dahlia, curly garlic scape"
   }
 ];

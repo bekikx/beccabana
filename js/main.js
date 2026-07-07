@@ -1,44 +1,60 @@
 const PAGE_SIZE = 9;
 
 const state = {
-  book: "all", // "all" | 1 | 2 | 3
-  lesson: "all", // "all" | "unassigned" | 1-20
+  book: "all", // "all" | 1 | 2 | 3 | "freestyle"
+  sortBy: "date", // "lesson" | "date"
+  sortDir: "desc", // "asc" | "desc"
   page: 1
 };
 
 function booksPresent() {
-  return [...new Set(pieces.map(p => p.book))].sort();
-}
-
-function lessonsPresentForBook(book) {
-  const lessons = pieces
-    .filter(p => p.book === book && p.lesson !== null)
-    .map(p => p.lesson);
-  return [...new Set(lessons)].sort((a, b) => a - b);
-}
-
-function hasUnassignedForBook(book) {
-  return pieces.some(p => p.book === book && p.lesson === null);
+  // Freestyle first, then Book 3, Book 2, Book 1.
+  return [...new Set(pieces.map(p => p.book))].sort((a, b) => {
+    if (a === "freestyle") return -1;
+    if (b === "freestyle") return 1;
+    return b - a;
+  });
 }
 
 function filteredPieces() {
-  // Sort by date (newest first). Array.prototype.sort is stable, so pieces
-  // sharing a date keep their relative order from the `pieces` array below —
-  // to reorder same-day pieces, just reorder their blocks in that array.
+  // Unassigned (null) lessons always sort last, regardless of direction.
+  // Array.prototype.sort is stable, so ties keep their relative order from
+  // the `pieces` array below.
   return pieces
     .filter(p => state.book === "all" || p.book === state.book)
-    .filter(p => {
-      if (state.lesson === "all") return true;
-      if (state.lesson === "unassigned") return p.lesson === null;
-      return p.lesson === state.lesson;
-    })
-    .sort((a, b) => b.date.localeCompare(a.date));
+    .sort((a, b) => {
+      if (state.sortBy === "date") {
+        const cmp = a.date.localeCompare(b.date);
+        return state.sortDir === "desc" ? -cmp : cmp;
+      }
+      // Lesson sort: on "All Arrangements", group by book first (reading
+      // through Book 1 start to finish, then Book 2, etc.) rather than
+      // interleaving books that share the same lesson number. Unassigned
+      // lessons always sort last, regardless of direction; descending is a
+      // true mirror of ascending (book order flips too, not just the
+      // lesson number within a book).
+      const aUnassigned = a.lesson === null;
+      const bUnassigned = b.lesson === null;
+      if (aUnassigned && bUnassigned) return a.date.localeCompare(b.date);
+      if (aUnassigned) return 1;
+      if (bUnassigned) return -1;
+
+      const bookA = a.book === "freestyle" ? Infinity : a.book;
+      const bookB = b.book === "freestyle" ? Infinity : b.book;
+      const bookCmp = state.sortDir === "desc" ? bookB - bookA : bookA - bookB;
+      if (bookCmp !== 0) return bookCmp;
+
+      const lessonCmp = state.sortDir === "desc" ? b.lesson - a.lesson : a.lesson - b.lesson;
+      if (lessonCmp !== 0) return lessonCmp;
+
+      return a.date.localeCompare(b.date);
+    });
 }
 
 function renderBookTabs() {
   const el = document.getElementById("book-tabs");
   const books = booksPresent();
-  const tabs = ['<button class="tab' + (state.book === "all" ? " active" : "") + '" data-book="all">All Books</button>'];
+  const tabs = ['<button class="tab' + (state.book === "all" ? " active" : "") + '" data-book="all">All Arrangements</button>'];
   books.forEach(b => {
     tabs.push(
       `<button class="tab${state.book === b ? " active" : ""}" data-book="${b}">${BOOK_TITLES[b] || "Book " + b}</button>`
@@ -51,44 +67,41 @@ function renderBookTabs() {
       const val = btn.dataset.book;
       const asNumber = Number(val);
       state.book = val === "all" || Number.isNaN(asNumber) ? val : asNumber;
-      state.lesson = "all";
       state.page = 1;
       renderAll();
     });
   });
 }
 
-function renderLessonFilter() {
-  const el = document.getElementById("lesson-filter");
+function renderSortControls() {
+  const el = document.getElementById("sort-controls");
 
-  if (state.book === "all" || state.book === "freestyle") {
-    el.innerHTML = "";
-    el.style.display = "none";
-    return;
+  // Freestyle pieces have no lesson number, so lesson sorting is meaningless
+  // there — force date sort and only offer the date options.
+  if (state.book === "freestyle" && state.sortBy === "lesson") {
+    state.sortBy = "date";
+    state.sortDir = "desc";
   }
-  el.style.display = "flex";
 
-  const lessons = lessonsPresentForBook(state.book);
-  const chips = ['<button class="chip' + (state.lesson === "all" ? " active" : "") + '" data-lesson="all">All Lessons</button>'];
-  lessons.forEach(n => {
-    chips.push(
-      `<button class="chip${state.lesson === n ? " active" : ""}" data-lesson="${n}">Lesson ${n}</button>`
-    );
-  });
-  if (hasUnassignedForBook(state.book)) {
-    chips.push(
-      `<button class="chip chip-muted${state.lesson === "unassigned" ? " active" : ""}" data-lesson="unassigned">Unassigned</button>`
-    );
-  }
-  el.innerHTML = chips.join("");
+  const lessonOptions = state.book === "freestyle" ? "" : `
+      <option value="lesson-asc">Lesson: Ascending</option>
+      <option value="lesson-desc">Lesson: Descending</option>`;
 
-  el.querySelectorAll(".chip").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const val = btn.dataset.lesson;
-      state.lesson = val === "all" || val === "unassigned" ? val : Number(val);
-      state.page = 1;
-      renderAll();
-    });
+  const current = `${state.sortBy}-${state.sortDir}`;
+  el.innerHTML = `
+    <label for="sort-select">Sort by</label>
+    <select id="sort-select">
+      <option value="date-desc">Date: Newest First</option>
+      <option value="date-asc">Date: Oldest First</option>${lessonOptions}
+    </select>
+  `;
+  el.querySelector("#sort-select").value = current;
+  el.querySelector("#sort-select").addEventListener("change", e => {
+    const [sortBy, sortDir] = e.target.value.split("-");
+    state.sortBy = sortBy;
+    state.sortDir = sortDir;
+    state.page = 1;
+    renderAll();
   });
 }
 
@@ -266,7 +279,7 @@ function renderPagination(total) {
 
 function renderAll() {
   renderBookTabs();
-  renderLessonFilter();
+  renderSortControls();
   renderGallery();
 }
 
