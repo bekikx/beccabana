@@ -9,9 +9,20 @@
   --moss: #6b7355;
   --line: #d8d0bd;
   --max: 1080px;
+  /* This site only has a light design — without this, phones/browsers in
+     system dark mode render native form controls (button, select) with
+     dark-mode UA chrome that can override our own styling (e.g. solid
+     black buttons), regardless of the colors we set below. */
+  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
+
+button, select {
+  -webkit-appearance: none;
+  appearance: none;
+  font-family: inherit;
+}
 
 html { scroll-behavior: smooth; }
 
@@ -190,6 +201,7 @@ nav a:hover { color: var(--accent); }
 .sort-controls {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 46px;
   padding-bottom: 30px;

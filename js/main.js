@@ -90,7 +90,7 @@ function renderSortControls() {
   const current = `${state.sortBy}-${state.sortDir}`;
   el.innerHTML = `
     <label for="sort-select">Sort by</label>
-    <select id="sort-select">
+    <select id="sort-select" autocomplete="off">
       <option value="date-desc">Date: Newest First</option>
       <option value="date-asc">Date: Oldest First</option>${lessonOptions}
     </select>
