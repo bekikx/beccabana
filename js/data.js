@@ -637,7 +637,7 @@ const pieces = [
     date: "2026-06-20",
     book: 3,
     lesson: 19, // TODO: fill in 1-20 once you know it
-    images: ["images/book3/2026-06-20-5.jpg", "images/book3/2026-06-20-2.jpg", "images/book3/2026-06-20-3.jpg", "images/book3/2026-06-20-4.jpg"],
+    images: ["images/book3/2026-06-20-5.jpg", "images/book3/2026-06-20-2.jpg", "images/book3/2026-06-20-4.jpg"],
     title: "",
     description: "rose, tulip, trailing jasmine vine"
   },
