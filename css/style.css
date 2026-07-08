@@ -64,6 +64,8 @@ h1, h2, .brand {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 10px;
   padding-top: 18px;
   padding-bottom: 18px;
 }
@@ -74,11 +76,18 @@ h1, h2, .brand {
   text-decoration: none;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px 20px;
+}
+
 nav a {
   color: var(--ink-soft);
   text-decoration: none;
   text-transform: lowercase;
-  margin-left: 28px;
   font-size: 0.95rem;
   letter-spacing: 0.03em;
   transition: color 0.2s ease;
@@ -90,7 +99,6 @@ nav a:hover { color: var(--accent); }
    so it's clear which language you're viewing (not just "tap to switch") */
 .lang-toggle {
   display: inline-flex;
-  margin-left: 20px;
   border: 1px solid var(--line);
   border-radius: 100px;
   overflow: hidden;
@@ -524,9 +532,6 @@ html[lang="ja"] .hero-sub {
 .icon-link {
   display: inline-flex;
   align-items: center;
-  vertical-align: middle;
-  position: relative;
-  top: -2px;
   color: var(--ink-soft);
   transition: color 0.2s ease;
 }
@@ -604,6 +609,7 @@ html[lang="ja"] .hero-sub {
 }
 
 @media (max-width: 600px) {
-  nav a { margin-left: 16px; font-size: 0.85rem; }
+  nav { justify-content: center; gap: 8px 14px; }
+  nav a { font-size: 0.85rem; }
   .hero { padding: 80px 0 60px; }
 }
